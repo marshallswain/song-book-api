@@ -1,0 +1,34 @@
+{
+  "host": "localhost",
+  "port": 3030,
+  "public": "../public/",
+  "paginate": {
+    "default": 10000,
+    "max": 50000
+  },
+  "authentication": {
+    "secret": "61789cb93647b3b1b3397f2c08531df72d5219378657c4a265240e27843062a638e3b3ca7ab0fb63bbf42e31a00f4f51476edd17d1a3c2368ce26b3c168bd3bf6c956efa75d964e4560f06ffbcc62eb0c526898bf8cb010693ac66f673b6e9bf47d96d8feb6d86f5c785b529621de421aca1cc7d887ce546d3617aa5f2e0d85a23193adf1eb14fca9526fb2e27fbb31be573ac6a3c9c4573e08df3ab040b28e24c1ae45ea0bc776895c0b784b9aa0a6ac02a375f56259a9ce356f3daf373da1d2a20b8bb1b14bee40bbead396a61bee9bba0cbaee2578e46828044bc141055345bf46facf4a82e050de67dba7c7cb40387a3953479b32e333bd84a764b09c1a5",
+    "strategies": [
+      "jwt",
+      "local"
+    ],
+    "path": "/authentication",
+    "service": "users",
+    "jwt": {
+      "header": {
+        "typ": "access"
+      },
+      "audience": "https://yourdomain.com",
+      "subject": "anonymous",
+      "issuer": "feathers",
+      "algorithm": "HS256",
+      "expiresIn": "1d"
+    },
+    "local": {
+      "entity": "user",
+      "usernameField": "email",
+      "passwordField": "password"
+    }
+  },
+  "mongodb": "mongodb://localhost:27017/song_book_api"
+}
